@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/kpnlogo.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    KPN Logistics BlockChain
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="./dashboard.html" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../assets/img/logo-small.png">
+          </div>
+        </a>
+        <a href="./dashboard.html" class="simple-text logo-normal">
+          Admin
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-bank"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./datasimulation.html">
+              <i class="nc-icon nc-paper"></i>
+              <p style="font-weight: bold">Data Simulation</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="./crm.html">
+              <i class="nc-icon nc-single-02"></i>
+              <p style="font-weight: bold">CRM</p>
+            </a>
+          </li>
+          <li>
+            <a href="./ebs.html">
+              <i class="nc-icon nc-cart-simple"></i>
+              <p style="font-weight: bold">EBS</p>
+            </a>
+          </li>
+          <li>
+            <a href="./lsp.html">
+              <i class="nc-icon nc-spaceship"></i>
+              <p style="font-weight: bold">LSP</p>
+            </a>
+          </li>
+          <li>
+            <a href="./delivery.html">
+              <i class="nc-icon nc-delivery-fast"></i>
+              <p style="font-weight: bold">Delivery</p>
+            </a>
+          </li>
+		  <li>
+            <a target='_blank' href="http://localhost:4000/test.html">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p style="font-weight: bold">Block Activity</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand">Customer Order Summary</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <button class="btn btn-success" type="submit">
+              <a href="./orderdetails.html?id=KPN001">Search</a>
+            </button>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link btn-rotate" href="./login.html">
+                  <i class="nc-icon nc-button-power"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Logout</span>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+  
+  <canvas id="bigDashboardChart"></canvas>
+  
+  
+</div> -->
+      <div class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary btn-round" onclick="createSalesOrder()">Create Sales Order</button>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-stats"> 
+                <div class="card-body">
+                        <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>CustomerNo</th>
+                                    <th>OrderNumber</th>
+                                    <th>Create By</th>
+                                    <th>OrderType</th>
+                                    <th>TotalPrice</th>
+                                    <th>OrderStatus</th>
+                                    <th>Cancellation</th>
+                                    <th>Send to EBS</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>C-001</td>
+                                    <td>O-001</td>
+                                    <td>CRM</td>
+                                    <td>ShipOnly</td>
+                                    <td>160000</td>
+                                    <td>Created</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#cancelModal">
+                                            <i class="fa fa-close"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                            <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#sendtoebs">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                        <td>C-001</td>
+                                        <td>O-002</td>
+                                        <td>Customer</td>
+                                        <td>BillOnly</td>
+                                        <td>60000</td>
+                                        <td>InProgress</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#cancelModal">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#sendtoebs">
+                                                    <i class="fa fa-arrow-right"></i>
+                                                </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>C-003</td>
+                                        <td>O-003</td>
+                                        <td>CRM</td>
+                                        <td>ShipOnly</td>
+                                        <td>40000</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#cancelModal">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#sendtoebs">
+                                                    <i class="fa fa-arrow-right"></i>
+                                                </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td>C-004</td>
+                                            <td>O-004</td>
+                                            <td>CRM</td>
+                                            <td>ReturnOrder</td>
+                                            <td>34500</td>
+                                            <td>InProgress</td>
+                                            <td>
+                                                <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#cancelModal">
+                                                    <i class="fa fa-close"></i>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                    <button class="btn btn-primary btn-fab btn-icon btn-round" data-toggle="modal" data-target="#sendtoebs">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                    </button>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="cancelModal">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content"> 
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Are you sure want Cancel Order?</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <!--Confirm content with business-->
+                      <label for="">CustomerNo : C001</label>
+                      <br>
+                      <label for="">Product : iPhone</label>
+                      <br>
+                      <label for="">Status : Created</label>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-round" data-dismiss="modal">Yes</button>
+                        <button class="btn btn-primary btn-round" data-dismiss="modal">No</button>
+                    </div>
+                  </div>
+             </div>
+        </div>
+        <!--Send to EBS Modal-->
+        <div class="modal fade" id="sendtoebs">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content"> 
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Are you sure want Send to EBS?</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <!--Confirm content with business-->
+                      <label for="">CustomerNo : C001</label>
+                      <br>
+                      <label for="">Product : iPhone</label>
+                      <br>
+                      <label for="">Status : Created</label>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-round" data-dismiss="modal">Yes</button>
+                        <button class="btn btn-primary btn-round" data-dismiss="modal">No</button>
+                    </div>
+                  </div>
+             </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+    function createSalesOrder() {
+        window.location.href = "./createsalesorder.html";
+    }
+  </script>
+</body>
+
+</html>

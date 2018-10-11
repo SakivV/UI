@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    KPN Logistics BlockChain
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="./dashboard.html" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../assets/img/logo-small.png">
+          </div>
+        </a>
+        <a href="./dashboard.html" class="simple-text logo-normal">
+          Admin
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="active ">
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-bank"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./datasimulation.html">
+              <i class="nc-icon nc-paper"></i>
+              <p>Data Simulation</p>
+            </a>
+          </li>
+          <li>
+            <a href="./crm.html">
+              <i class="nc-icon nc-single-02"></i>
+              <p>CRM</p>
+            </a>
+          </li>
+          <li>
+            <a href="./ebs.html">
+              <i class="nc-icon nc-cart-simple"></i>
+              <p>EBS</p>
+            </a>
+          </li>
+          <li>
+            <a href="./ebs.html">
+              <i class="nc-icon nc-spaceship"></i>
+              <p>LSP</p>
+            </a>
+          </li>
+          <li>
+            <a href="./delivery.html">
+              <i class="nc-icon nc-delivery-fast"></i>
+              <p>Delivery</p>
+            </a>
+          </li>
+		  <li>
+            <a target='_blank' href="http://localhost:4000/test.html">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Block Activity</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Logistics Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <button class="btn btn-success" type="submit">
+                    <a href="./search.html">Search</a>
+            </button>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link btn-rotate" href="./login.html">
+                  <i class="nc-icon nc-button-power"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Logout</span>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+  
+  <canvas id="bigDashboardChart"></canvas></div> -->
+      <div class="content">
+          <h3><div id="div_orderno"></div></h3>
+          <div class="card">
+  <div class="card-body">
+     <div class="row">
+                                <div class="col-md-6">
+                                    <label for="customer" id="kpncustomer" style="color: black">Customer Name: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">KPN Service Glas</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Appointment date:</label>
+                                    <label for="customer" id="kpncustomer" style="color: black">20 Aug 2018</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Appointment time from/to: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">21:00 - 22:00</label>
+                                   
+                                </div>
+                                <div class="col-md-6">
+								 
+                                    <label for="customer" id="kpncustomer" style="color: black">Customer PO (ref):  </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">654567</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Brand: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black"> KPN </label>
+									        <br>
+                                        <label for="customer" id="kpncustomer" style="color: black">Priority: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black"> Higher </label>
+                                        <br>
+                                        <label for="customer" id="kpncustomer" style="color: black">Date/time delivered to EBS: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black">-</label>
+                                        <br>
+                                      
+                                       
+                                        
+                                </div>
+								<div class="table-responsive"> 
+								<table class="table">
+								<thead class=" text-primary"> 
+								<tr>
+								<th></th>
+								<th> Item Number </th>
+								<th> Product Name </th> 
+								<th> Item Description </th>
+								<th> Quantity Requested </th>
+								<th> Request Date </th>
+								<th> Ware House </th>
+							
+							
+								
+								
+								</tr></thead>
+								<tbody>
+								<tr> 
+								<td><div class="form-check form-check-radio form-check-inline">
+  <label class="form-check-label">
+    <input onchange="fun_changevalues();" class="form-check-input" type="radio" name="inlineRadioOptions" checked id="inlineRadio1" value="option1"> 
+    <span class="form-check-sign"></span>
+  </label>
+</div>
+								</td>
+								<td> 1 </td> 
+								<td> iPhone X </td>
+								<td> Iphone X with 256gb </td> 
+								<td> 1 </td>
+								<td > 25/09/2018 </td>
+								<td > Hyd </td>
+								
+								</tr> 
+								
+								<tr> 
+								<td><div class="form-check form-check-radio form-check-inline">
+  <label class="form-check-label">
+    <input onchange="fun_changevalues();" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 
+    <span class="form-check-sign"></span>
+  </label>
+</div>	</td>
+								<td> 2 </td> 
+								<td> iPhone 8 </td>
+								<td> Iphone 8 with 256gb </td> 
+								<td> 1 </td>
+								<td > 25/09/2018 </td>
+								<td > Hyd </td>
+								</tr> </table> </div>
+                                </div>
+  </div>
+</div>
+                <div id="accordion">
+                     <!--CRM Status Details-->
+                    <div class="card">
+                        <div class="card-header">
+                          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            CRM
+                          </a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          <div class="card-body">
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <label for="customer" id="kpncustomer" style="color: black">Creation Date: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">20/08/2018</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Tracking Number: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">678536</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Inventory Location: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">Hyd</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">UoM : </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">-</label>
+                                    <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Promise Date: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">25/09/2018</label>
+									 <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Schedule Ship Date: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">-</label>
+									 <br>
+                                    <label for="customer" id="kpncustomer" style="color: black">Schedule Arrival Date: </label>
+                                    <label for="customer" id="kpncustomer" style="color: black">-</label>
+                                </div>
+                                <div class="col-md-6">
+                                        
+                                        <label for="customer" id="kpncustomer" style="color: black">Line Shipping Instructions: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black">Keep the alignment</label>
+                                        <br>
+                                        <label for="customer" id="kpncustomer" style="color: black">Line Packing Instructions: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black">Pack with customer address sticker</label>
+                                        <br>
+                                        <label for="customer" id="kpncustomer" style="color: black">Contract Type: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black">orderCreate</label>
+                                        <br>
+										<label for="customer" id="kpncustomer" style="color: black">Status Reason: </label>
+                                        <label for="customer" id="kpncustomer" style="color: black">-</label>
+                                        <br>
+                                        <label for="orderstatus">Status Text: </label>
+                                        <h6>Created</h6>
+                                </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--EBS Status Details-->
+                        <div class="card">
+                            <div class="card-header">
+                              <a class="card-link" data-toggle="collapse" href="#collapseEBS">
+                                EBS
+                              </a>
+                            </div>
+                            <div id="collapseEBS" class="collapse show" data-parent="#accordion">
+                              <div class="card-body">
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                    <label for="customer" id="kpncustomer" style="color: black">CustomerID: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">342374</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">OrderNo: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">321321</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Org SIS Reference No: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">123123</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Product Ordered: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black"><span id="span_ebsproduct"></span></label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Quantity: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">1</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                   
+                                                   
+                                                    <label for="customer" id="kpncustomer" style="color: black">Date: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">2018-08-13 12:30:33</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Txn Type: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderValidation</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">ChainId: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderValidate</label>
+                                                    <br>
+                                                    <label for="orderstatus">Status: </label>
+                                                    <h6>Validated</h6>
+                                            </div>
+                                            </div>
+                              </div>
+                            </div>
+                        </div>
+
+                    <!--LSP Status Details-->
+                            <div class="card">
+                                <div class="card-header">
+                                  <a class="card-link" data-toggle="collapse" href="#collapseLSP">
+                                    LSP
+                                  </a>
+                                </div>
+                                <div id="collapseLSP" class="collapse show" data-parent="#accordion">
+                                  <div class="card-body">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="customer" id="kpncustomer" style="color: black">CustomerID: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">342374</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">OrderNo: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">123123</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Org SIS Reference No: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">123123</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">WareHouse Order No: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">432432</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Product Ordered: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black"><span id="span_lspproduct"></span></label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Quantity: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">1</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  
+                                                    <label for="customer" id="kpncustomer" style="color: black">Date: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">2018-08-13 12:40:33</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Txn Type: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderPacked</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">ChainId: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderPack</label>
+                                                    <br>
+                                                    <label for="orderstatus">Status: </label>
+                                                    <h6>Packed/Shipped</h6>
+                                                </div>
+                                                </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                        <!--Delivery Status Details-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#collapseDelivery">
+                                    Delivery
+                                    </a>
+                                    </div>
+                                <div id="collapseDelivery" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                            <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label for="customer" id="kpncustomer" style="color: black">CustomerID: </label>
+                                                        <label for="customer" id="kpncustomer" style="color: black">342374</label>
+                                                        <br>
+                                                        <label for="customer" id="kpncustomer" style="color: black">OrderNo: </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black">321321</label>
+                                                            <br>
+                                                            <label for="customer" id="kpncustomer" style="color: black">Org SIS Reference No: </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black">123123</label>
+                                                            <br>
+                                                            <label for="customer" id="kpncustomer" style="color: black">WareHouse Order No: </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black">432432</label>
+                                                            <br>
+                                                            <label for="customer" id="kpncustomer" style="color: black">Delivery No : </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black">543543</label>
+                                                            <br>
+                                                            <label for="customer" id="kpncustomer" style="color: black">Product Ordered: </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black"><span id="span_deliveryproduct"></span></label>
+                                                            <br>
+                                                            <label for="customer" id="kpncustomer" style="color: black">Quantity: </label>
+                                                            <label for="customer" id="kpncustomer" style="color: black">1</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                            
+                                                        
+                                                    <label for="customer" id="kpncustomer" style="color: black">Date: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">2018-08-13 12:50:33</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">Txn Type: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderDeliverd</label>
+                                                    <br>
+                                                    <label for="customer" id="kpncustomer" style="color: black">ChainId: </label>
+                                                    <label for="customer" id="kpncustomer" style="color: black">orderDelivery</label>
+                                                    <br>
+                                                            <label for="orderstatus">Status: </label>
+                                                            <h6>Delivered</h6>
+                                                    </div>
+                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+	 
+	  
+    });
+	$(function() {
+	
+			
+			function getQueryStringValue (key) {  
+  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+  
+}  
+var orderno = getQueryStringValue('id');
+  
+  document.getElementById("div_orderno").innerHTML = orderno;
+	});
+	fun_changevalues();
+	function fun_changevalues()
+	{
+		var checkedoption = $('input[name=inlineRadioOptions]:checked').val();
+		
+		if(checkedoption == 'option1')
+		{
+		    
+			document.getElementById("span_ebsproduct").innerHTML = "iPhone 6";
+			document.getElementById("span_lspproduct").innerHTML = "iPhone 6";
+			document.getElementById("span_deliveryproduct").innerHTML = "iPhone 6";
+		}
+		else
+		{
+			
+			document.getElementById("span_ebsproduct").innerHTML = "Samsung";
+			document.getElementById("span_lspproduct").innerHTML = "Samsung";
+			document.getElementById("span_deliveryproduct").innerHTML = "Samsung";
+		}
+	}
+  </script>
+</body>
+
+</html>

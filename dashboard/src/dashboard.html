@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/kpnlogo.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    KPN Logistics BlockChain
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="./dashboard.html" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../assets/img/logo-small.png">
+          </div>
+        </a>
+        <a href="./dashboard.html" class="simple-text logo-normal">
+          Admin
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="active ">
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-bank"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./datasimulation.html">
+              <i class="nc-icon nc-paper"></i>
+              <p style="font-weight: bold">Data Simulation</p>
+            </a>
+          </li>
+          <li>
+            <a href="./crm.html">
+              <i class="nc-icon nc-single-02"></i>
+              <p style="font-weight: bold">CRM</p>
+            </a>
+          </li>
+          <li>
+            <a href="./ebs.html">
+              <i class="nc-icon nc-cart-simple"></i>
+              <p style="font-weight: bold">EBS</p>
+            </a>
+          </li>
+          <li>
+            <a href="./lsp.html">
+              <i class="nc-icon nc-spaceship"></i>
+              <p style="font-weight: bold">LSP</p>
+            </a>
+          </li>
+          <li>
+            <a href="./delivery.html">
+              <i class="nc-icon nc-delivery-fast"></i>
+              <p style="font-weight: bold">Delivery</p>
+            </a>
+          </li>
+		  <li>
+            <a target='_blank' href="http://localhost:4000/test.html">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p style="font-weight: bold">Block Activity</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Logistics Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <button class="btn btn-success" type="submit">
+              <a href="./orderdetails.html?id=KPN001">Search</a>
+            </button>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link btn-rotate" href="./login.html">
+                  <i class="nc-icon nc-button-power"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Logout</span>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- <div class="panel-header panel-header-lg">
+  
+  <canvas id="bigDashboardChart"></canvas>
+
+</div> -->
+      <div class="content">
+        <div class="row">
+          <div class="col">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="fa fa-check"  style="font-size:40px;color:green"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Processed</p>
+                      <a href = "./viewProcessedDetails.html">10</a>
+                      <label for="">(20)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-hourglass-half"  style="font-size:40px;color:Blue"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">In-Progress</p>
+                        <a href ="./viewInProgressDetails.html">20
+                          </a>
+                          <label for="">(40)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-warning"  style="font-size:40px;color:orange"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Warnings</p>
+                        <a href ="./viewWarningDetails.html">2
+                          </a>
+                        <label for="">(2)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="fa fa-close"  style="font-size:40px;color:Red"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Errors</p>
+                          <a href ="./viewErrorDetails.html">2
+                            </a>
+                          <label for="">(1)</label>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="nc-icon nc-simple-add"></i>Orders Created
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Order validation starts here-->
+          <div class="col">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="fa fa-check"  style="font-size:40px;color:green"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Processed</p>
+                      <a href class="card-title">110
+                        </a>
+                      <label for="">(220)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-hourglass-half"  style="font-size:40px;color:Blue"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">In-Progress</p>
+                        <a href class="card-title">55
+                          </a>
+                          <label for="">(110)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-warning"  style="font-size:40px;color:orange"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Warnings</p>
+                        <a href class="card-title">15
+                          </a>
+                          <label for="">(30)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="fa fa-close"  style="font-size:40px;color:Red"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Errors</p>
+                          <a href  class="card-title">5
+                            </a>
+                            <label for="">(10)</label>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="nc-icon nc-check-2"></i>Orders Validated
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Order validation finished here-->
+
+
+          <div class="col">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <!--Order Shipped Start here-->
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="fa fa-check"  style="font-size:40px;color:green"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Processed</p>
+                      <a href class="card-title">85
+                        </a>
+                        <label for="">(160)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-hourglass-half"  style="font-size:40px;color:Blue"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">In-Progress</p>
+                        <a href  class="card-title">45
+                          </a>
+                          <label for="">(90)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-warning"  style="font-size:40px;color:orange"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Warnings</p>
+                        <a href class="card-title">4
+                          </a>
+                          <label for="">(7)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="fa fa-close"  style="font-size:40px;color:Red"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Errors</p>
+                          <a href class="card-title">1
+                            </a>
+                            <label for="">(2)</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Order Shipped finished here-->
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="nc-icon nc-cart-simple"></i>Orders Shipped
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <!--Order Delivered Start here-->
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="fa fa-check"  style="font-size:40px;color:green"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Processed</p>
+                      <a href class="card-title">140
+                        </a>
+                        <label for="">(280)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-hourglass-half"  style="font-size:40px;color:Blue"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">In-Progress</p>
+                        <a href class="card-title">86
+                          </a>
+                          <label for="">(172)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="fa fa-warning"  style="font-size:40px;color:orange"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Warnings</p>
+                        <a href  class="card-title">5
+                          </a>
+                          <label for="">(9)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="fa fa-close"  style="font-size:40px;color:Red"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Errors</p>
+                          <a href class="card-title">2
+                            </a>
+                            <label for="">(4)</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Order Delivered finished here-->
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="nc-icon nc-delivery-fast"></i>Orders Delivered
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Node-wise Statuses </h5>
+                <div class="btn-group btn-group-sm">
+                  <button type="button" class="btn btn-primary">4 hrs</button>
+                  <button type="button" class="btn btn-primary">12 hrs</button>
+                  <button type="button" class="btn btn-primary">24 hs</button>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="legend">
+                    <i class="fa fa-circle" style="font-size:16px;color:green"></i> Processed
+                    <i class="fa fa-circle" style="font-size:16px;color:Blue"></i> In-Progress
+                    <i class="fa fa-circle" style="font-size:16px;color:Orange"></i> Warnings
+                    <i class="fa fa-circle" style="font-size:16px;color:Red"></i> Errors
+                  </div>
+                <div class="stats">
+                  <i class="fa fa-history"></i> Updated 24 hrs ago
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">CRM Node</h5>
+                <p class="card-title">Running</p>
+              </div>
+              <div class="card-body ">
+                  <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-alert-circle-i text-success"></i>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!--Node EBS-->
+          <div class="col-lg-3">
+              <div class="card ">
+                <div class="card-header ">
+                  <h5 class="card-title">EBS Node</h5>
+                  <p class="card-title">Running</p>
+                </div>
+                <div class="card-body ">
+                    <div class="icon-big text-center icon-warning">
+                        <i class="nc-icon nc-alert-circle-i text-success"></i>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!--Node LSP-->
+            <div class="col-lg-3">
+                <div class="card ">
+                  <div class="card-header ">
+                    <h5 class="card-title">LSP Node</h5>
+                    <p class="card-title">Running</p>
+                  </div>
+                  <div class="card-body ">
+                      <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-alert-circle-i text-success"></i>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <!--Node Deliver-->
+            <div class="col-lg-3">
+                <div class="card ">
+                  <div class="card-header ">
+                    <h5 class="card-title">Delivery Node</h5>
+                    <p class="card-title text-danger">Down</p>
+                  </div>
+                  <div class="card-body ">
+                      <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-bell-55 text-danger"></i>
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+</body>
+
+</html>
